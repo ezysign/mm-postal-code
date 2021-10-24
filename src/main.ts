@@ -28,5 +28,3 @@ export const findPostalCode = (postalCode: string) => {
     (item) => item.qv_code === decomposed.qtrVCode,
   )
 }
-
-console.log(findPostalCode('1101001'))

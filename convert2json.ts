@@ -53,22 +53,16 @@ fs.createReadStream('csv/Myanmar_Locations_Postal_Code_MM.csv')
         tsp_code: item.town_ship_code,
         region_code: item.region_code,
         postal_code: item.postal_code,
-        qv_code: item.quarter_village_code,
+        qv_code: item.qv_code,
       }
     })
 
     const regionGrouped = groupBy(data, 'region_code')
     Object.entries(regionGrouped).forEach((item) => {
       regionGrouped[item[0]] = groupBy(regionGrouped[item[0]], 'tsp_code')
-      //   Object.entries(regionGrouped[item[0]]).forEach((village) => {
-      //     regionGrouped[item[0]][village[0]] = groupBy(
-      //       village[1],
-      //       "quarter_village_tract"
-      //     );
-      //   });
     })
 
-    fs.writeFileSync('write.json', JSON.stringify(regionGrouped))
+    fs.writeFileSync('src/data.json', JSON.stringify(regionGrouped))
   })
 
 var groupBy = function (xs, key) {

@@ -36,7 +36,6 @@ fs.createReadStream('csv/Myanmar_Locations_Postal_Code_MM.csv')
   })
   .on('end', () => {
     const data = enResults.map((item, index) => {
-      // console.log(item);
       return {
         ...{
           en: {
@@ -63,6 +62,8 @@ fs.createReadStream('csv/Myanmar_Locations_Postal_Code_MM.csv')
     })
 
     fs.writeFileSync('src/data.json', JSON.stringify(regionGrouped))
+
+    fs.writeFileSync('src/flat.json', JSON.stringify({ data: data }))
   })
 
 var groupBy = function (xs, key) {

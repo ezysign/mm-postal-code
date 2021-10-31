@@ -5,8 +5,6 @@ import { CodeData, PostalCode } from '../types/custom-types'
 const postalCodeArray: CodeData = { ...data }
 const flatCodeArray = flatArray as { data: PostalCode[] }
 
-export * from '../types/custom-types'
-
 const constructPostalCode = (
   postalCode: string,
 ): { regionCode: string; tspCode: string; qtrVCode: string; postalCode: string } | undefined => {

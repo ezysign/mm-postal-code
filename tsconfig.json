@@ -9,7 +9,10 @@
       "esModuleInterop": true,
       "moduleResolution": "node",
       "typeRoots": ["types","node_modules/@types"],
-      "sourceMap": false
+      "sourceMap": false,
+      "lib": [
+        "es5", "es6", "dom", "dom.iterable"
+      ]
     },
     "include": ["./src/**/*.ts"],
     "exclude":["./**/*.test.ts","./example"]

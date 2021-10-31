@@ -5,7 +5,7 @@
   "main": "src/main.ts",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "ts-node-dev src/main.ts",
+    "dev": "ts-node-dev src/index.ts",
     "convert": "ts-node-dev convert2json.ts",
     "test": "jest --verbose --coverage --watchAll",
     "build:dist": "rm -rf dist && tsc"
